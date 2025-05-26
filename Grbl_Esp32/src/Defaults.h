@@ -39,7 +39,7 @@
 
 // Grbl generic default settings. Should work across different machines.
 #ifndef DEFAULT_STEP_PULSE_MICROSECONDS
-#    define DEFAULT_STEP_PULSE_MICROSECONDS 3  // $0
+#    define DEFAULT_STEP_PULSE_MICROSECONDS 4  // $0
 #endif
 
 #ifndef DEFAULT_STEP_ENABLE_DELAY

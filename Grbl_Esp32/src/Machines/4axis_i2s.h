@@ -25,7 +25,7 @@
     along with Grbl_ESP32.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#define MACHINE_NAME            "External 4 Axis Driver Board V2"
+#define MACHINE_NAME            "i2s 4 Axis Driver Board V2"
 
 #ifdef N_AXIS
         #undef N_AXIS
@@ -33,15 +33,15 @@
 
 
 // I2S (steppers & other output-only pins)
-// #define USE_I2S_OUT
+#define USE_I2S_OUT
 //#define USE_I2S_STEPS
 //#define DEFAULT_STEPPER ST_I2S_STATIC
 
 // #define USE_STEPSTICK   // makes sure MS1,2,3 !reset and !sleep are set
 
-// #define I2S_OUT_BCK      GPIO_NUM_27
-// #define I2S_OUT_WS       GPIO_NUM_14
-// #define I2S_OUT_DATA     GPIO_NUM_12
+#define I2S_OUT_BCK      GPIO_NUM_27
+#define I2S_OUT_WS       GPIO_NUM_14
+#define I2S_OUT_DATA     GPIO_NUM_12
 
 // You can override these by defining them in a board file.
 // To override, you must set all of them
@@ -56,13 +56,13 @@
 #define N_AXIS 4
 
 #define X_STEP_PIN              GPIO_NUM_32
-#define X_DIRECTION_PIN         GPIO_NUM_12
+#define X_DIRECTION_PIN         I2SO(1)
 #define Y_STEP_PIN              GPIO_NUM_33
-#define Y_DIRECTION_PIN         GPIO_NUM_14
+#define Y_DIRECTION_PIN         I2SO(2)
 #define Z_STEP_PIN              GPIO_NUM_25
-#define Z_DIRECTION_PIN         GPIO_NUM_27
+#define Z_DIRECTION_PIN         I2SO(3)
 #define A_STEP_PIN              GPIO_NUM_26
-#define A_DIRECTION_PIN         GPIO_NUM_21
+#define A_DIRECTION_PIN         I2SO(4)
 //#define STEPPERS_DISABLE_PIN    GPIO_NUM_13
 
 
@@ -74,7 +74,6 @@
 #define VFD_RS485_ADDR          0x02
 
 #define COOLANT_MIST_PIN        GPIO_NUM_22
-// #define COOLANT_MIST_PIN        GPIO_NUM_35
 // #define COOLANT_FLOOD_PIN       I2SO(7)
 // #define USER_DIGITAL_PIN_0      I2SO(5)
 
@@ -86,12 +85,12 @@
 
 
 // #define PROBE_PIN               GPIO_NUM_15
-#define CONTROL_SAFETY_DOOR_PIN GPIO_NUM_35
+// #define CONTROL_SAFETY_DOOR_PIN GPIO_NUM_35
 
 
 
 #if (N_AXIS != 3)
-        // #define A_LIMIT_PIN     GPIO_NUM_35
+        #define A_LIMIT_PIN     GPIO_NUM_35
 
         #endif
 
