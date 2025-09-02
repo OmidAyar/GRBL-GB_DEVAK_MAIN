@@ -69,7 +69,7 @@ F
 
 
 
-#define SPINDLE_TYPE            SpindleType::NONE // only one spindle at a time
+#define SPINDLE_TYPE            SpindleType::HD09 // only one spindle at a time
 #define VFD_RS485_TXD_PIN	GPIO_NUM_16
 #define VFD_RS485_RXD_PIN	GPIO_NUM_13
 #define VFD_RS485_RTS_PIN	GPIO_NUM_4
